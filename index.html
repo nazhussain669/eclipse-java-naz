@@ -1,16 +1,25 @@
 <head>
 	<title>Login Page</title>
 	<link rel="stylesheet" href="customize.css"></link>
-	<script src="LoginScreen.js"></script>
+	<script src="GradeScreen.js"></script>
 </head>
 <body>
 	<h2>Login</h2>
 		<form>
-			<label for = "lblusername">Username:</label><br>
-			<input type="text" id="txtusername" name="txtusername" required autofocus autocomplete="Name"><br><br>
+			<label for = "lblgeometry">Geometry:</label><br>
+			<input type="text" id="txtgeograde" name="txtgeograde" required autofocus autocomplete="Grade"><br><br>
 			
-			<label for ="lblpassword">Password:</label><br>
-			<input type="password" id="txtpassword" name="txtpassword" required><br><br>
+			<label for ="lblhistory">History:</label><br>
+			<input type="text" id="txthisgrade" name="txthisgrade" required><br><br>
+			
+			<label for ="lblchemistry">Chemistry:</label><br>
+			<input type="text" id="txtchemgrade" name="txtchemgrade" required><br><br>
+			
+			<label for ="lblseminar">Seminar:</label><br>
+			<input type="text" id="txtsemgrade" name="txtsemgrade" required><br><br>
+			
+			<label for ="lblspanish">Spanish:</label><br>
+			<input type="text" id="txtspangrade" name="txtspangrade" required><br><br>
 			
 			<button type="submit" id="btnlogin">SUBMIT</button>
 		</form>
