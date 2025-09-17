@@ -3,35 +3,46 @@ window.addEventListener("load",addListener);
 function addListener()
 {
 	document.getElementById("btnlogin").addEventListener("click",gradeinfo);
-
 }
 
 function gradeinfo()
 {
-	geometry = document.getElementById("txtgeometry").value;
-	geograde = document.getElementById("txtgeograde").value;
+	class1 = document.getElementById("txtclass1").value;
 	
-	history = document.getElementById("txthistory").value;
-	hisgrade = document.getElementById("txthisgrade").value;
+	grade1 = document.getElementById("txtgrade1").value;
 	
-	chemistry = document.getElementById("txtchemistry").value;
-	chemgrade = document.getElementById("txtchemgrade").value;
+	class2 = document.getElementById("txtclass2").value;
+	
+	grade2 = document.getElementById("txtgrade2").value;
+	
+	class3 = document.getElementById("txtclass3").value;
+	
+	grade3 = document.getElementById("txtgrade3").value;
 		
-	seminar = document.getElementById("txtseminar").value;
-	semgrade = document.getElementById("txtsemgrade").value;
+	class4 = document.getElementById("txtclass4").value;
+	
+	grade4 = document.getElementById("txtgrade4").value;
 			
-	spanish = document.getElementById("txtspanish").value;
-	spangrade = document.getElementById("txtspangrade").value;
+	class5 = document.getElementById("txtclass5").value;
+	
+	grade5 = document.getElementById("txtgrade5").value;
 	
 	
-	
-	if (geograde == "" || hisgrade == "" || chemgrade == "" || semgrade == "" || spangrade == "")
+	if (class1 == "" || class2 == "" || class3 == "" || class4 == "" || class5 == "" || 
+		grade1 == "" || grade2 == "" || grade3 == "" || grade4 == "" || grade5 == "")
 	{
-		alert("Missing grade!");
+		alert("Missing course name/grade!");
 	}
 	else
 	{
-		alert("Welcome " + username);
-		document.write("Your username is " + username + " and your password is " + passwd);
+		PerformCalc();
 	}
 }
+	
+function PerformCalc()
+	{
+		sum = parseFloat (grade1) + parseFloat (grade2) + parseFloat (grade3) + parseFloat (grade4) + parseFloat (grade5);
+		average = parseFloat (sum) / 5;
+		document.write("Your sum is: " + sum + "<br>");
+		document.write("Your average is: " + average);
+	}
