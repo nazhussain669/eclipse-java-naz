@@ -40,9 +40,21 @@ function gradeinfo()
 }
 	
 function PerformCalc()
+{
+	sum = parseFloat (grade1) + parseFloat (grade2) + parseFloat (grade3) + parseFloat (grade4) + parseFloat (grade5);
+	average = parseFloat (sum) / 5;
+	score = parseInt(average);
+		
+	let message = "";
+			
+	switch(score)
 	{
-		sum = parseFloat (grade1) + parseFloat (grade2) + parseFloat (grade3) + parseFloat (grade4) + parseFloat (grade5);
-		average = parseFloat (sum) / 5;
-		document.write("Your sum is: " + sum + "<br>");
-		document.write("Your average is: " + average);
+		case (score >= 30 || score <= 100):
+			message = "gpa";
+			break;
+		default:
+			message = "invalid";
 	}
+			
+	document.getElementById("lblResult").textContent = message;
+}
