@@ -7,54 +7,42 @@ function addListener()
 
 function gradeinfo()
 {
-	class1 = document.getElementById("txtclass1").value;
-	
 	grade1 = document.getElementById("txtgrade1").value;
-	
-	class2 = document.getElementById("txtclass2").value;
-	
 	grade2 = document.getElementById("txtgrade2").value;
-	
-	class3 = document.getElementById("txtclass3").value;
-	
 	grade3 = document.getElementById("txtgrade3").value;
-		
-	class4 = document.getElementById("txtclass4").value;
-	
 	grade4 = document.getElementById("txtgrade4").value;
-			
-	class5 = document.getElementById("txtclass5").value;
-	
 	grade5 = document.getElementById("txtgrade5").value;
 	
-	
-	if (class1 == "" || class2 == "" || class3 == "" || class4 == "" || class5 == "" || 
-		grade1 == "" || grade2 == "" || grade3 == "" || grade4 == "" || grade5 == "")
-	{
-		alert("Missing course name/grade!");
-	}
-	else
-	{
-		PerformCalc();
-	}
+	PerformCalc();
 }
 	
 function PerformCalc()
 {
 	sum = parseFloat (grade1) + parseFloat (grade2) + parseFloat (grade3) + parseFloat (grade4) + parseFloat (grade5);
 	average = parseFloat (sum) / 5;
-	score = parseInt(average);
-		
-	let message = "";
-			
-	switch(score)
+	
+	let message = ""
+	
+	switch(true)
 	{
-		case (score >= 30 || score <= 100):
-			message = "gpa";
+		case (average >= 90):
+			message = "Grade = (A) GPA = 4.0";
+			break;
+		case (average >= 80):
+			message = "Grade = (B) GPA = 3.0";
+			break;
+		case (average >= 70):
+			message = "Grade = (C) GPA = 2.0";
+			break;
+		case (average >= 60):
+			message = "Grade = (D) GPA = 1.0";
 			break;
 		default:
-			message = "invalid";
+			message = "Invalid";
 	}
-			
-	document.getElementById("lblResult").textContent = message;
+	
+	document.write(message);
+	//getElementById("lblaverage").textContent = (average);
+	//document.getElementById("lblmessage").textContent = (message);
+	
 }
