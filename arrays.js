@@ -15,7 +15,7 @@ function ShowWords()
 	wordList.innerHTML = "";
 	wordlength = allwords.length;
 	
-	for(i=0; i<wordlength-1; i++)
+	for(i=0; i<=wordlength-1; i++)
 		{
 			li = document.createElement("li");
 			li.textContent = allwords[i];
@@ -50,4 +50,5 @@ function ClearWord()
 		ShowWords();
 		document.getElementById("txtentword").value = "";
 		document.getElementById("txtentword").focus();
+
 }
