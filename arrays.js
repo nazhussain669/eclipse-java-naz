@@ -12,14 +12,20 @@ function addListener()
 function ShowWords()
 {
 	wordList = document.getElementById("cmbwordlist");
+	drplist = document.getElementById("drdchooseword");
 	wordList.innerHTML = "";
+	drplist.innerHTML = "";
 	wordlength = allwords.length;
 	
 	for(i=0; i<=wordlength-1; i++)
 		{
 			li = document.createElement("li");
+			drp = document.createElement("option");
+			
 			li.textContent = allwords[i];
+			drp.text = allwords[i]
 			wordList.appendChild(li);
+			drplist.appendChild(drp);
 		}
 }
 
@@ -50,5 +56,4 @@ function ClearWord()
 		ShowWords();
 		document.getElementById("txtentword").value = "";
 		document.getElementById("txtentword").focus();
-
 }
