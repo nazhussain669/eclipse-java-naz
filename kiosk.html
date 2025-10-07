@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-<html>
 <head>
   <title>Self-Checkout Kiosk</title>
   <link rel="stylesheet" href="customarray.css">
-  <script src="arrays.js" defer></script>
+  <script src="checkout.js"></script>
 </head>
 <body>
   <h1>Self-Checkout Kiosk</h1>
 
   <label id="lblentword">Select an Item</label>
-  <input type="text" id="txtentword" placeholder="Quantity" autofocus>
+  <input type="text" id="txtentword" autofocus placeholder="Quantity"></input>
+  
+  <button id="btnbrush"></button><img src="https://us-i.makeupstore.com/d/d7/d7glfnh2malo.jpg" icon="Makeup Brushes" width="200" height="200">
+  <button id="btnlipgloss"></button><img src="https://assets.teenvogue.com/photos/65cd2d8d7974dd5419adfe0c/16:9/w_2560%2Cc_limit/Comm_SummerFridayLip_Jan2023_HEADER.jpg" icon="Summer Friday Lip Gloss" width="200" height="200">
+  <button id="btnblush"></button><img src="https://m.media-amazon.com/images/I/71J9Xxj8SVL._UF1000,1000_QL80_.jpg" icon="Makeup Blush Pallet" width="200" height="200">
+  <button id="btnperfume"></button><img src="https://soldejaneiro.com/cdn/shop/files/C76_HomepageBanner_Mobilecopy.webp?v=1722371430&width=1500" icon="Sol de Janeiro" width="200" height="200">
+  
+  <button type="submit" id="btnclearcart">CLEAR CART</button>
 
-  <button type="submit" id="btnaddword">ADD ITEM</button>
-  <button type="submit" id="btnclearword">CLEAR CART</button>
+  <ul id="cmbitemlist"></ul>
 
-  <ul id="cmbwordlist">🛒 Your Cart</ul>
-
-  <select id="drdchooseword">
-    <option value="apple">Apple - $1.00</option>
-    <option value="bread">Bread - $2.50</option>
-    <option value="milk">Milk - $3.00</option>
+  <select id="drdchooseitem">
+    <option value="brushes">Makeup Brushes (5pc) - $15.99</option>
+    <option value="lipgloss">Summer Friday Lipgloss (4 pcs) - $48.99</option>
+    <option value="blush">Makeup Blush pallet - $22.99</option>
+    <option value="perfume">Sol de Janeiro (4 included) - $33.99</option>
   </select>
 </body>
 </html>
