@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Makeup Sale!</title>
-		<link rel="stylesheet" href="selfkiosk.css"></link>
-		<script src="checkout.js"></script>
-	</head>
-	<body>
-		<label id="lblitem">CHOOSE YOUR ITEMS</label>
-		<input type="text" id="txtitem" autofocus placeholder="Item"></input>
-		<button type="submit" id="btnadditem">ADD ITEM</button>
-		<button type="submit" id="btnclearcart">CLEAR CART</button>
-		<ul id="cmbwordlist"></ul>
-		<select id="drdchooseword"></select>
-	</body>
+<html>
+<head>
+  <title>Self-Checkout Kiosk</title>
+  <link rel="stylesheet" href="customarray.css">
+  <script src="arrays.js" defer></script>
+</head>
+<body>
+  <h1>Self-Checkout Kiosk</h1>
+
+  <label id="lblentword">Select an Item</label>
+  <input type="text" id="txtentword" placeholder="Quantity" autofocus>
+
+  <button type="submit" id="btnaddword">ADD ITEM</button>
+  <button type="submit" id="btnclearword">CLEAR CART</button>
+
+  <ul id="cmbwordlist">🛒 Your Cart</ul>
+
+  <select id="drdchooseword">
+    <option value="apple">Apple - $1.00</option>
+    <option value="bread">Bread - $2.50</option>
+    <option value="milk">Milk - $3.00</option>
+  </select>
+</body>
 </html>
