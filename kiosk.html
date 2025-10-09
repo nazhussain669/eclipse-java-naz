@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Self-Checkout Kiosk</title>
+  <title>Beyond Beauty Co.Self-Checkout Kiosk</title>
+  <link rel="icon" type="image/x-icon" href="symbol.jpg">
   <link rel="stylesheet" href="selfkiosk.css">
   <script src="checkout.js"></script>
 </head>
 <body>
-  <h1>Self-Checkout Kiosk</h1>
+  <h1>Beyond Beauty Co.</h1>
 
   <label id="lblentword">Enter Quantity</label>
   <input type="number" id="txthowmuch" min="1" autofocus placeholder="Quantity" required></input>
@@ -26,6 +27,7 @@
 
   <!-- List of Items For Purchase -->
   <label for="drdchooseword">Choose Item</label>
+  
   <select id="drdchooseitem">
     <option value="brushes">Makeup Brushes (5pc) - $15.99</option>
     <option value="lipgloss">Summer Friday Lip gloss (4 pcs) - $48.99</option>
@@ -35,6 +37,7 @@
   
   <!-- Special Discounts to choose from before checkout -->
   <label for="drdspecialoption">Special Option</label>
+  
   <select id="drdspecialoption">
     <option value="none">None</option>
     <option value="member">Membership Discount (-10%)</option>
