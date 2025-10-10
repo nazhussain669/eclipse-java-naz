@@ -7,16 +7,16 @@
   <script src="checkout.js"></script>
 </head>
 <body>
-  <h1>Beyond Beauty Co.</h1>
-
-  <label id="lblentword">Enter Quantity</label>
-  <input type="number" id="txthowmuch" min="1" autofocus placeholder="Quantity" required></input>
+  <h1>Beyond Beauty Co.</h1><br><br>
   
   <!-- Images to represent items -->
-  <img src="https://us-i.makeupstore.com/d/d7/d7glfnh2malo.jpg" alt="Makeup Brushes" width="100" height="100">
-  <img src="https://assets.teenvogue.com/photos/65cd2d8d7974dd5419adfe0c/16:9/w_2560%2Cc_limit/Comm_SummerFridayLip_Jan2023_HEADER.jpg" alt="Summer Friday Lip Gloss" width="100" height="100">
-  <img src="https://m.media-amazon.com/images/I/71J9Xxj8SVL._UF1000,1000_QL80_.jpg" alt="Makeup Blush Pallet" width="100" height="100">
-  <img src="https://soldejaneiro.com/cdn/shop/files/C76_HomepageBanner_Mobilecopy.webp?v=1722371430&width=1500" alt="Sol de Janeiro" width="100" height="100">
+  <img src="https://us-i.makeupstore.com/d/d7/d7glfnh2malo.jpg" alt="Makeup Brushes" width="200" height="200">
+  <img src="https://assets.teenvogue.com/photos/65cd2d8d7974dd5419adfe0c/16:9/w_2560%2Cc_limit/Comm_SummerFridayLip_Jan2023_HEADER.jpg" alt="Summer Friday Lip Gloss" width="200" height="200"><br><br>
+  <img src="https://m.media-amazon.com/images/I/71J9Xxj8SVL._UF1000,1000_QL80_.jpg" alt="Makeup Blush Pallet" width="200" height="200">
+  <img src="https://soldejaneiro.com/cdn/shop/files/C76_HomepageBanner_Mobilecopy.webp?v=1722371430&width=1500" alt="Sol de Janeiro" width="200" height="200"><br><br>
+  
+  <label id="lblentquant">Enter Quantity</label>
+  <input type="number" id="txthowmuch" min="1" autofocus placeholder="Quantity" required></input>
   
   <!-- Buttons to click depending on what user wants to do -->
   <button type="submit" id="btnadditem">ADD ITEM</button>
@@ -26,7 +26,7 @@
   <ul id="cmbitemlist"></ul>
 
   <!-- List of Items For Purchase -->
-  <label for="drdchooseword">Choose Item</label>
+  <label for="drdwhichitem">Choose Item</label>
   
   <select id="drdchooseitem">
     <option value="brushes">Makeup Brushes (5pc) - $15.99</option>

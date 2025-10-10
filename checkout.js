@@ -1,6 +1,6 @@
 window.addEventListener("load", addListener);
 
-allitems = [];
+cart = [];
 cartlength = 0;
 
 //Gets the id of the button that is clicked on to do a specific function
@@ -13,8 +13,8 @@ function addListener()
 
 function addItemToCart()
 {
-	qtyInput = document.getElementById("txtentword");
-	itemDropdown = document.getElementById("drdchooseword");
+	qtyInput = document.getElementById("txtentquant");
+	itemDropdown = document.getElementById("drdwhichitem");
 	optionDropdown = document.getElementById("drdspecialoption");
 	
 	quantity = parseInt(qtyInput.value);
@@ -32,6 +32,7 @@ function addItemToCart()
 	let price = 0;
 	let displayName = "";
 
+	//gets the value of whichever item the user chooses
 	switch (itemValue)
 	{
 		case "makeupbrushes":
@@ -55,5 +56,47 @@ function addItemToCart()
 			return;
 	}
 	
+	let total = price * quantity;
+
+	// Apply special option
+	switch (optionValue) 
+	{
+		case "member":
+			total *= 0.9; // 10% discount
+			break;
+		case "giftwrap":
+			total += 5.00; // gift wrap fee
+			break;
+		// no change for if user selects no special option
+	}
 	
+	// Store item in cart
+	cart.push
+	({
+	   name: displayName,
+	   quantity: quantity,
+	   price: price,
+	   option: optionValue,
+	   total: total
+	});
+	  
+	// Clear quantity input 
+	qtyInput.value = "";
+	qtyInput.focus();
+	
+	updateCartDisplay();
+}
+
+function updateCartDisplay() 
+{
+  list = document.getElementById("cmbitemlist");
+  list.innerHTML = ""; // clear previous cart
+
+  let grandTotal = 0;
+
+  if (cart.length == 0)
+  {
+	list.innerHTML = "<li>Your Cart is empty</li>"
+	return;
+  }
 }
