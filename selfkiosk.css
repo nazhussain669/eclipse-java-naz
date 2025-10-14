@@ -6,12 +6,24 @@ body
 h1
 {
 	color:#800080;
+	font-size: 35px;
+}
+
+h2
+{
+	color:#8080c0;
+}
+
+img
+{
+	border-radius: 20px;
 }
 
 label
 {
 	display: inline-block;
 	color: black;
+	font-size: 20px;
 }
 
 input
@@ -19,13 +31,14 @@ input
 	width: 10%;
 	padding: 10px;
 	border-color:lightblue;
-	border-radius: 5px;
-	font-size: 14px;
+	border-radius: 20px;
+	font-size: 20px;
 }
 
 button
 {
 	background:white;
+	font-size: 15px;
 }
 
 button:hover
@@ -36,4 +49,5 @@ button:hover
 select
 {
 	color: red;
+	font-size: 20px;
 }

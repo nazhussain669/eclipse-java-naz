@@ -7,35 +7,41 @@
   <script src="checkout.js"></script>
 </head>
 <body>
+  <!-- Page heading -->
   <h1>Beyond Beauty Co.</h1><br><br>
+  <h2>Select your item of purchase from the 'Choose Item' drop down menu below then click the 'add item' button to add to your cart.</h2>
+  <h2>To either clear your cart, remove an item, or  proceed to checkout, click on the respective buttons.</h2>
   
   <!-- Images to represent items -->
-  <img src="https://us-i.makeupstore.com/d/d7/d7glfnh2malo.jpg" alt="Makeup Brushes" width="200" height="200">
-  <img src="https://assets.teenvogue.com/photos/65cd2d8d7974dd5419adfe0c/16:9/w_2560%2Cc_limit/Comm_SummerFridayLip_Jan2023_HEADER.jpg" alt="Summer Friday Lip Gloss" width="200" height="200"><br><br>
-  <img src="https://m.media-amazon.com/images/I/71J9Xxj8SVL._UF1000,1000_QL80_.jpg" alt="Makeup Blush Pallet" width="200" height="200">
-  <img src="https://soldejaneiro.com/cdn/shop/files/C76_HomepageBanner_Mobilecopy.webp?v=1722371430&width=1500" alt="Sol de Janeiro" width="200" height="200"><br><br>
+  <img src="https://us-i.makeupstore.com/d/d7/d7glfnh2malo.jpg" alt="Makeup Brushes" width="250" height="250">
+  <img src="https://assets.teenvogue.com/photos/65cd2d8d7974dd5419adfe0c/16:9/w_2560%2Cc_limit/Comm_SummerFridayLip_Jan2023_HEADER.jpg" alt="Summer Friday Lip Gloss" width="250" height="250"><br><br>
+  <img src="https://m.media-amazon.com/images/I/71J9Xxj8SVL._UF1000,1000_QL80_.jpg" alt="Makeup Blush Pallet" width="250" height="250">
+  <img src="https://soldejaneiro.com/cdn/shop/files/C76_HomepageBanner_Mobilecopy.webp?v=1722371430&width=1500" alt="Sol de Janeiro" width="250" height="250"><br><br>
   
+  <!-- Quantity input -->
   <label id="lblentquant">Enter Quantity</label>
-  <input type="number" id="txthowmuch" min="1" autofocus placeholder="Quantity" required></input>
+  <input type="number" id="txthowmuch" min="1" value="1" autofocus placeholder="Quantity" required>
   
   <!-- Buttons to click depending on what user wants to do -->
   <button type="submit" id="btnadditem">ADD ITEM</button>
   <button type="submit" id="btnclearcart">CLEAR CART</button>
   <button type="submit" id="btncheckout">CHECKOUT</button>
+  <button type="submit" id="btnremoveitem">REMOVE LAST ITEM</button>
 
+  <!-- Cart Display -->
   <ul id="cmbitemlist"></ul>
 
-  <!-- List of Items For Purchase -->
-  <label for="drdwhichitem">Choose Item</label>
+  <!-- Drop down List of Items For Purchase -->
+  <label for="item">Choose Item</label>
   
   <select id="drdchooseitem">
-    <option value="brushes">Makeup Brushes (5pc) - $15.99</option>
-    <option value="lipgloss">Summer Friday Lip gloss (4 pcs) - $48.99</option>
-    <option value="blush">Makeup Blush Palette - $22.99</option>
-    <option value="perfume">Sol de Janeiro Perfume (4 included) - $33.99</option>
+    <option value="brushes">Makeup Brushes (5pc) - $26.99</option>
+    <option value="lipgloss">Summer Friday Lip gloss (4 pc) - $48.99</option>
+    <option value="blush">Makeup Blush Palette - $35.99</option>
+    <option value="perfume">Sol de Janeiro Perfume (4 included) - $57.99</option>
   </select>
   
-  <!-- Special Discounts to choose from before checkout -->
+  <!-- Drop down of Special Discounts to choose from before checkout -->
   <label for="drdspecialoption">Special Option</label>
   
   <select id="drdspecialoption">
