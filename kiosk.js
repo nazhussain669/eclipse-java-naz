@@ -1,7 +1,7 @@
 window.addEventListener("load", addListener);
 
 let cart = [];
-taxrate = 0.045; //4.5% tax
+let taxrate = 0.045; //4.5% tax
 
 //Gets the id of the button that is clicked on to do a specific function
 function addListener()
@@ -24,7 +24,7 @@ function addItemToCart()
 	let optionValue = optionDropdown.value;
 	
 	//if the user enters no quantity, they will be alerted
-	if (quantity <= 0)
+	if (quantity <= 0 || isNaN(quantity)) // NaN-not a number, if user leaves the input field blank they will be alerted
 	{
 		alert("Please enter a valid quantity.");
 		qtyInput.focus(); //places the cursor back to the input so user enters a valid quantity
@@ -39,19 +39,19 @@ function addItemToCart()
 	{
 		case "brushes":
 			price = 26.99;
-			displayName = "Makeup Brushes";
+			displayName = "Makeup Brushes (5pc)";
 			break;
 		case "lipgloss":
 			price = 48.99;
-			displayName = "Lip Gloss";
+			displayName = "Summer Friday Lip Gloss (4pc)";
 			break;
 		case "blush":
 			price = 35.99;
-			displayName = "Blush";
+			displayName = "Makeup Blush Palette";
 			break;
 		case "perfume":
 			price = 57.99;
-			displayName = "Perfumes";
+			displayName = "Sol de Janeiro Perfume Set (3 included)";
 			break;
 		default:
 			alert("Invalid item selected.");
@@ -108,7 +108,7 @@ function updateCartDisplay()
   for (i = 0; i < cart.length; i++)
   {
 	let item = cart[i];
-	subtotal += item.total;
+	subtotal += item.total; // += adds on the value to the same variable without creating a new one
 			
 	let li = document.createElement("li");
 	li.textContent = item.name + " x" + item.quantity + " - $" + item.total.toFixed(2) + 
