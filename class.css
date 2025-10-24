@@ -1,3 +1,4 @@
+
 body {
 	font-family: Arial, sans-serif;
 	background-color: #f4f6f8;
@@ -10,9 +11,24 @@ h1 {
 	color: #2a5d84;
 }
 
-h2 {
-	font-family: Arial;
-	color: black;
+h2:first-of-type { /*selects the very first element of its type*/
+	color: #0080ff;
+	background-color: #e9f3f7;
+	font-size: 22px;
+	padding: 10px 15px;
+	width: 80%;
+	margin: 20px auto;
+	border-radius: 4px;
+}
+
+h2:nth-of-type(2) { /*target an element based on its number (position) among others of the same type*/
+	color: #444;
+	background-color: #e9f3f7;
+	font-size: 22px;
+	padding: 10px 15px;
+	width: 80%;
+	margin: 20px auto;
+	border-radius: 4px;
 }
 
 table {
@@ -30,7 +46,7 @@ th, td {
 }
 
 th {
-	background-color: #2afd84;
+	background-color: #ff80c0;
 	color: white;
 }
 
