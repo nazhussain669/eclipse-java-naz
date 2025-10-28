@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beyond Beauty Co.Self-Checkout Kiosk</title>
+  <link rel="icon" type="image/x-icon" href="symbol.jpg">
+  <link rel="stylesheet" href="selfkiosk.css">
+  <script src="makeup2.js"></script>
+</head>
+<body>
+  <!-- Page heading -->
+  <h1>Beyond Beauty Co.</h1><br><br>
+  <h2>Welcome to Self-Checkout! Please follow all instructions to proceed :)</h2>
+  <h2>Select your item of purchase from the 'Choose Item' drop down menu below then click the 'add item' button to add to your cart.</h2>
+  <h2>To either clear your cart, remove an item, or  proceed to checkout, click on the respective buttons.</h2>
+  
+  <!-- Images to represent items -->
+  <img src="https://us-i.makeupstore.com/d/d7/d7glfnh2malo.jpg" alt="Makeup Brushes" width="250" height="250">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfBCsGTiwnoM1IJ8ohs5ConmmXNKGPGaD1ng&s" alt="Summer Friday Lip Gloss" width="250" height="250"><br><br>
+  <img src="https://m.media-amazon.com/images/I/71J9Xxj8SVL._UF1000,1000_QL80_.jpg" alt="Makeup Blush Pallet" width="250" height="250">
+  <img src="https://soldejaneiro.com/cdn/shop/files/C76_HomepageBanner_Mobilecopy.webp?v=1722371430&width=1500" alt="Sol de Janeiro" width="250" height="250"><br><br>
+  
+  <!-- Drop down List of Items For Purchase -->
+  <label for="item">Choose Item</label>
+  
+  <select id="drdchooseitem">
+    <option value="brushes">Makeup Brushes (5pc) - $26.99</option>
+    <option value="lipgloss">Summer Friday Mini Lip gloss (4 pc) - $48.99</option>
+    <option value="blush">Makeup Blush Palette - $35.99</option>
+    <option value="perfume">Sol de Janeiro Perfume Set (3 included) - $57.99</option>
+  </select>
+  
+  <!-- Drop down of Special Discounts to choose from before checkout -->
+  <label for="drdspecialoption">Special Option</label>
+  
+  <select id="drdspecialoption">
+    <option value="none">None</option>
+    <option value="member">Membership Discount (-10%)</option>
+    <option value="giftwrap">Gift Wrap (+$5)</option>
+  </select><br><br>
+  
+  <!-- Quantity input -->
+  <label id="lblentquant">Enter Quantity</label>
+  <input type="number" id="txthowmuch" min="1" value="1" max="50" value="50" autofocus placeholder="Quantity" required>
+  
+  <!-- Buttons to click depending on what user wants to do -->
+  <button type="submit" id="btnadditem">ADD ITEM</button>
+  <button type="submit" id="btnclearcart">CLEAR CART</button>
+  <button type="submit" id="btncheckout">CHECKOUT</button>
+  <button type="submit" id="btnremoveitem">REMOVE LAST ITEM</button>
+
+  <!-- Cart Display -->
+  <ul id="cmbitemlist"></ul>
+  
+</body>
+</html>

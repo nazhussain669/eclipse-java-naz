@@ -1,27 +1,31 @@
 body
 {
 	background-color:lightyellow;
+	text-align:center; /* puts all the elements in the middle*/
 }
 
 h1
 {
 	color:#800080;
 	font-size: 35px;
+	font-family: Arial;
 }
 
 h2
 {
 	color:#8080c0;
+	font-size: 18px;
+	font-family: Arial;
 }
 
 img
 {
-	border-radius: 20px;
+	border-radius: 20px; /* gives the images a rounded corner*/
 }
 
 label
 {
-	display: inline-block;
+	display: inline-block; /* flows in line*/
 	color: black;
 	font-size: 20px;
 }
@@ -29,7 +33,7 @@ label
 input
 {
 	width: 10%;
-	padding: 10px;
+	padding: 10px; /* size of the input box*/
 	border-color:lightblue;
 	border-radius: 20px;
 	font-size: 20px;
@@ -48,6 +52,23 @@ button:hover
 
 select
 {
-	color: red;
-	font-size: 20px;
+	color:red;
+  	padding: 10px;
+ 	background-color: #ffffff;
+  	border: 2px solid #f0c0f0;
+  	border-radius: 15px;
+  	width: 40%;
+  	font-family: Arial;
+  	font-size: 18px;
+}
+
+ul#cmbitemlist li
+{
+  display: flex; /* lay out in row*/
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 1px dashed #808080; /* creates a line of dash to separate the different statements*/
+  padding: 5px;
+  gap: 10px; /*  creates a space in between the statements so it is neat and not compact*/
 }
