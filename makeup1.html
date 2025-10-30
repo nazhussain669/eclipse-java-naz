@@ -14,10 +14,10 @@
   <h2>To either clear your cart, remove an item, or  proceed to checkout, click on the respective buttons.</h2>
   
   <!-- Images to represent items -->
-  <img src="https://us-i.makeupstore.com/d/d7/d7glfnh2malo.jpg" alt="Makeup Brushes" width="250" height="250">
-  <img src="https://assets.teenvogue.com/photos/65cd2d8d7974dd5419adfe0c/16:9/w_2560%2Cc_limit/Comm_SummerFridayLip_Jan2023_HEADER.jpg" alt="Summer Friday Lip Gloss" width="250" height="250"><br><br>
-  <img src="https://m.media-amazon.com/images/I/71J9Xxj8SVL._UF1000,1000_QL80_.jpg" alt="Makeup Blush Pallet" width="250" height="250">
-  <img src="https://soldejaneiro.com/cdn/shop/files/C76_HomepageBanner_Mobilecopy.webp?v=1722371430&width=1500" alt="Sol de Janeiro" width="250" height="250"><br><br>
+  <img src="brush.jpg" alt="Makeup Brushes" width="250" height="250">
+  <img src="lipgloss.jpg" alt="Summer Friday Lip Gloss" width="250" height="250"><br><br>
+  <img src="blush.jpg" alt="Makeup Blush Pallet" width="250" height="250">
+  <img src="perfume.jpg" alt="Sol de Janeiro" width="250" height="250"><br><br>
   
   <!-- Drop down List of Items For Purchase -->
   <label for="item">Choose Item</label>
@@ -36,7 +36,7 @@
     <option value="none">None</option>
     <option value="member">Membership Discount (-10%)</option>
     <option value="giftwrap">Gift Wrap (+$5)</option>
-  </select>
+  </select><br><br>
   
   <!-- Quantity input -->
   <label id="lblentquant">Enter Quantity</label>
@@ -45,15 +45,15 @@
   <!-- Credit Card Input -->
   <label for="txtcreditcard">Enter Credit Card Number</label>
   <input type="number" id="txtcreditcard" placeholder="Enter credit card number" required><br><br>
+
+  <!-- Cart Display -->
+  <ul id="cmbitemlist"></ul>
   
   <!-- Buttons to click depending on what user wants to do -->
   <button type="submit" id="btnadditem">ADD ITEM</button>
   <button type="submit" id="btnclearcart">CLEAR CART</button>
   <button type="submit" id="btncheckout">CHECKOUT</button>
   <button type="submit" id="btnremoveitem">REMOVE LAST ITEM</button>
-
-  <!-- Cart Display -->
-  <ul id="cmbitemlist"></ul>
   
 </body>
 </html>

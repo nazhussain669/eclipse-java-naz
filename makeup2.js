@@ -159,7 +159,7 @@ function ClearCart()
 // checkout and display receipt as an alert
 function CheckOutCart()
 {
-	let creditCardInput = document.getElementById("txtcreditcard").value.trim();
+	let creditCardInput = document.getElementById("txtcreditcard").value;
 	
 	if (cart.length == 0)
 	{
@@ -192,7 +192,7 @@ function CheckOutCart()
 	summary += ("\nSubtotal: " + "$" + subtotal.toFixed(2));
 	summary += ("\nTax: " + "$" + tax.toFixed(2));
 	summary += ("\nTotal: " + "$" + grandTotal.toFixed(2));
-	summary += ("\nPaid with Credit Card ending in " + creditCardInput.slice(-4));
+	summary += ("\nPaid with Credit Card ending in " + creditCardInput.slice(-4)); //takes the last 4 digits
 	
 	// show alert receipt
 	alert(summary);

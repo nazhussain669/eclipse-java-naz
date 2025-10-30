@@ -14,10 +14,10 @@
   <h2>To either clear your cart, remove an item, or  proceed to checkout, click on the respective buttons.</h2>
   
   <!-- Images to represent items -->
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgprFLyFwYWpQaCevjveOLVdMXSHLgw-G9Hw&s" alt="CeraVe Moisturizing Lotion" width="250" height="250">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykUcPFnHf57awk5Ur6WMPD2RjUQZJO1tVBQ&s" alt="Neutrogena Sunscreen Spray" width="250" height="250"><br><br>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSszft0ds4I1EsVu5rZ_oHWf6-sjRywLLhm5w&s" alt="Garnier Facial Cleansing Water" width="250" height="250">
-  <img src="https://www.sephora.com/productimages/sku/s2210706-main-zoom.jpg" alt="The Ordinary Vitamin C Serum" width="250" height="250"><br><br>
+  <img src="moisturizer.jpg" alt="CeraVe Moisturizing Lotion" width="250" height="250">
+  <img src="sunscreen.jpg" alt="Neutrogena Sunscreen Spray" width="250" height="250"><br><br>
+  <img src="cleanser.jpg" alt="Garnier Facial Cleansing Water" width="250" height="250">
+  <img src="serum.jpg" alt="The Ordinary Vitamin C Serum" width="250" height="250"><br><br>
   
   
   <!-- Drop down List of Items For Purchase -->
@@ -37,7 +37,7 @@
     <option value="none">None</option>
     <option value="member">Membership Discount (-10%)</option>
     <option value="giftwrap">Gift Wrap (+$5)</option>
-  </select>
+  </select><br><br>
   
   <!-- Quantity input -->
   <label id="lblentquant">Enter Quantity</label>
@@ -46,15 +46,15 @@
   <!-- Credit Card Input -->
   <label for="txtcreditcard">Enter Credit Card Number</label>
   <input type="number" id="txtcreditcard" placeholder="Enter credit card number" required><br><br>
+
+  <!-- Cart Display -->
+  <ul id="cmbitemlist"></ul>
   
   <!-- Buttons to click depending on what user wants to do -->
   <button type="submit" id="btnadditem">ADD ITEM</button>
   <button type="submit" id="btnclearcart">CLEAR CART</button>
   <button type="submit" id="btncheckout">CHECKOUT</button>
   <button type="submit" id="btnremoveitem">REMOVE LAST ITEM</button>
-
-  <!-- Cart Display -->
-  <ul id="cmbitemlist"></ul>
   
 </body>
 </html>
