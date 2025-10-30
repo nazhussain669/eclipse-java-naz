@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+  <title>Beyond Beauty Co.Self-Checkout Kiosk</title>
+  <link rel="icon" type="image/x-icon" href="symbol.jpg">
+  <link rel="stylesheet" href="selfkiosk.css">
+  <script src="skincare2.js"></script>
 </head>
 <body>
+  <!-- Page heading -->
+  <h1>Beyond Beauty Co.</h1><br><br>
+  <h2>Welcome to Self-Checkout! Please follow all instructions to proceed :)</h2>
+  <h2>Select your item of purchase from the 'Choose Item' drop down menu below then click the 'add item' button to add to your cart.</h2>
+  <h2>To either clear your cart, remove an item, or  proceed to checkout, click on the respective buttons.</h2>
+  
+  <!-- Images to represent items -->
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgprFLyFwYWpQaCevjveOLVdMXSHLgw-G9Hw&s" alt="CeraVe Moisturizing Lotion" width="250" height="250">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykUcPFnHf57awk5Ur6WMPD2RjUQZJO1tVBQ&s" alt="Neutrogena Sunscreen Spray" width="250" height="250"><br><br>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSszft0ds4I1EsVu5rZ_oHWf6-sjRywLLhm5w&s" alt="Garnier Facial Cleansing Water" width="250" height="250">
+  <img src="https://www.sephora.com/productimages/sku/s2210706-main-zoom.jpg" alt="The Ordinary Vitamin C Serum" width="250" height="250"><br><br>
+  
+  
+  <!-- Drop down List of Items For Purchase -->
+  <label for="item">Choose Item</label>
+  
+  <select id="drdchooseitem">
+    <option value="lotion">CeraVe Moisturizing Lotion - $14.99</option>
+    <option value="sunscreen">Neutrogena Sunscreen Spray - $16.99</option>
+    <option value="cleanser">Garnier Facial Cleansing Water - $9.99</option>
+    <option value="serum">The Ordinary Vitamin C Serum - $12.99</option>
+  </select>
+  
+  <!-- Drop down of Special Discounts to choose from before checkout -->
+  <label for="drdspecialoption">Special Option</label>
+  
+  <select id="drdspecialoption">
+    <option value="none">None</option>
+    <option value="member">Membership Discount (-10%)</option>
+    <option value="giftwrap">Gift Wrap (+$5)</option>
+  </select>
+  
+  <!-- Quantity input -->
+  <label id="lblentquant">Enter Quantity</label>
+  <input type="number" id="txthowmuch" min="1" value="1" autofocus placeholder="Quantity" required>
+  
+  <!-- Credit Card Input -->
+  <label for="txtcreditcard">Enter Credit Card Number</label>
+  <input type="number" id="txtcreditcard" placeholder="Enter credit card number" required><br><br>
+  
+  <!-- Buttons to click depending on what user wants to do -->
+  <button type="submit" id="btnadditem">ADD ITEM</button>
+  <button type="submit" id="btnclearcart">CLEAR CART</button>
+  <button type="submit" id="btncheckout">CHECKOUT</button>
+  <button type="submit" id="btnremoveitem">REMOVE LAST ITEM</button>
 
+  <!-- Cart Display -->
+  <ul id="cmbitemlist"></ul>
+  
 </body>
 </html>

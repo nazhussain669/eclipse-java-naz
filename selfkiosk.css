@@ -1,7 +1,7 @@
 body
 {
 	background-color:lightyellow;
-	text-align:center; /* puts all the elements in the middle*/
+	text-align:center;
 }
 
 h1
@@ -14,26 +14,26 @@ h1
 h2
 {
 	color:#8080c0;
-	font-size: 18px;
+	font-size: 20px;
 	font-family: Arial;
 }
 
 img
 {
-	border-radius: 20px; /* gives the images a rounded corner*/
+	border-radius: 20px;
 }
 
 label
 {
-	display: inline-block; /* flows in line*/
+	display: inline-block;
 	color: black;
 	font-size: 20px;
 }
 
 input
 {
-	width: 10%;
-	padding: 10px; /* size of the input box*/
+	width: 20%;
+	padding: 10px;
 	border-color:lightblue;
 	border-radius: 20px;
 	font-size: 20px;
@@ -64,11 +64,11 @@ select
 
 ul#cmbitemlist li
 {
-  display: flex; /* lay out in row*/
+  display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  border-bottom: 1px dashed #808080; /* creates a line of dash to separate the different statements*/
+  border-bottom: 1px dashed #808080;
   padding: 5px;
-  gap: 10px; /*  creates a space in between the statements so it is neat and not compact*/
+  gap: 10px;
 }

@@ -3,8 +3,7 @@ window.addEventListener("load", addListener);
 let cart = [];
 let taxrate = 0.045; //4.5% tax
 
-//Gets the id of the button that is clicked on to do a specific function
-function addListener()
+function addListener()//Adds event listeners to all buttons when page loads
 {
 	document.getElementById("btnadditem").addEventListener("click",addItemToCart);
 	document.getElementById("btnclearcart").addEventListener("click",ClearCart);
@@ -12,13 +11,14 @@ function addListener()
 	document.getElementById("btnremoveitem").addEventListener("click", removeLastItem);
 }
 
-// Adds a selected item with quantity and option to the cart
-function addItemToCart()
+function addItemToCart()// Adds a selected item with quantity and option to the cart
 {
+	//gets ids to form inputs
 	let qtyInput = document.getElementById("txthowmuch");
 	let itemDropdown = document.getElementById("drdchooseitem");
 	let optionDropdown = document.getElementById("drdspecialoption");
 	
+	//extract values from inputs
 	let quantity = parseInt(qtyInput.value);
 	let itemValue = itemDropdown.value;
 	let optionValue = optionDropdown.value;
@@ -28,14 +28,13 @@ function addItemToCart()
 	{
 		alert("Please enter a valid quantity.");
 		qtyInput.focus(); //places the cursor back to the input so user enters a valid quantity
-		return;
+		return;//stops the function
 	}
 	
 	let price = 0;
 	let displayName = "";
 
-	// Assign price and name based on selected item
-	switch (itemValue)
+	switch (itemValue) // Assign price and name based on selected item
 	{
 		case "brushes":
 			price = 26.99;
@@ -43,7 +42,7 @@ function addItemToCart()
 			break;
 		case "lipgloss":
 			price = 48.99;
-			displayName = "Summer Friday Mini Lip Gloss (4pc)";
+			displayName = "Summer Friday Lip Gloss (4pc)";
 			break;
 		case "blush":
 			price = 35.99;
@@ -58,22 +57,18 @@ function addItemToCart()
 			return;
 	}
 	
-	let total = price * quantity;
+	let total = price * quantity; // Calculate item total before tax
 
-	// Apply discount or gift wrap if selected
-	switch (optionValue) 
+	switch (optionValue) // Apply discount or gift wrap if selected
 	{
 		case "member":
-			total *= 0.9; // 10% discount off, remaining 90%
+			total *= 0.9; // 10% discount off
 			break;
 		case "giftwrap":
 			total += 5.00; // $5 gift wrap fee
 			break;
 		case "none":
-			break;// no change for if user selects none
-		default:
-			alert("Error");
-			return;
+			break; // no change for if user selects none
 	}
 	
 	// Store item in cart
@@ -93,7 +88,7 @@ function addItemToCart()
 	updateCartDisplay();
 }
 
-// updates the cart display on screen when something is added or removed
+// updates the cart display on screen
 function updateCartDisplay() 
 {
   let list = document.getElementById("cmbitemlist");
@@ -115,7 +110,8 @@ function updateCartDisplay()
 	subtotal += item.total; // += adds on the value to the same variable without creating a new one
 			
 	let li = document.createElement("li");
-	li.textContent = item.name + " x" + item.quantity + " - $" + item.total.toFixed(2) + " [" + Option(item.option) + "]"; // toFixed sets the price to 2 decimal places
+	li.textContent = item.name + " x" + item.quantity + " - $" + item.total.toFixed(2) + 
+	" [" + Option(item.option) + "]"; // toFixed sets the price to decimal places
 	list.appendChild(li);
   }
   
@@ -163,13 +159,23 @@ function ClearCart()
 // checkout and display receipt as an alert
 function CheckOutCart()
 {
+	let creditCardInput = document.getElementById("txtcreditcard").value.trim();
+	
 	if (cart.length == 0)
 	{
 		alert("Cart is empty. Add items before checkout.");
 		return;
 	}
 	
-	let summary = "Thank You For Shopping With Us! Your order will arrive in 7 business days. \nReceipt:\n"; // \n breaks the line
+	// Check if credit card field is filled
+	if (creditCardInput == "")
+	{
+		alert("Please enter a credit card number before checkout.");
+		document.getElementById("txtcreditcard").focus();
+		return;
+	}
+	
+	let summary = " Receipt:\n";
 	let subtotal = 0;
 	
 	// add each item to the summary
@@ -186,9 +192,17 @@ function CheckOutCart()
 	summary += ("\nSubtotal: " + "$" + subtotal.toFixed(2));
 	summary += ("\nTax: " + "$" + tax.toFixed(2));
 	summary += ("\nTotal: " + "$" + grandTotal.toFixed(2));
+	summary += ("\nPaid with Credit Card ending in " + creditCardInput.slice(-4));
 	
 	// show alert receipt
 	alert(summary);
+	
+	// clear everything after checkout
+	cart = [];
+	updateCartDisplay();
+	document.getElementById("txthowmuch").value = "";
+	document.getElementById("txtcreditcard").value = "";
+	document.getElementById("txthowmuch").focus();
 }
 
 // remove the last item added to cart
