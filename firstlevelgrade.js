@@ -1,13 +1,18 @@
 window.addEventListener("load", addListener);
 
-function addListener() {
+function addListener() 
+{
     document.getElementById("drdchooselevel").addEventListener("change", ChangeGrade);
+	HideMsg();
+}
 
-    // Hide all messages when page loads
-    document.getElementById("9th").style.visibility = "hidden";
-    document.getElementById("10th").style.visibility = "hidden";
-    document.getElementById("11th").style.visibility = "hidden";
-    document.getElementById("12th").style.visibility = "hidden";
+function HideMsg() 
+{
+	// Hide all messages when page loads
+	Div9 = document.getElementById("9th").style.visibility = "hidden";
+	Div10 = document.getElementById("10th").style.visibility = "hidden";
+	Div11 = document.getElementById("11th").style.visibility = "hidden";
+	Div12 = document.getElementById("12th").style.visibility = "hidden";
 }
 
 function ChangeGrade() 
@@ -16,12 +21,9 @@ function ChangeGrade()
     let selectedGrade = document.getElementById("drdchooselevel").value;
 
     // Hide all first
-    document.getElementById("9th").style.visibility = "hidden";
-    document.getElementById("10th").style.visibility = "hidden";
-    document.getElementById("11th").style.visibility = "hidden";
-    document.getElementById("12th").style.visibility = "hidden";
+    HideMsg();
 
-    // Show the selected one (same idea as your div.js)
+    // Show the selected one
     whichgrade = document.getElementById(selectedGrade);
     whichgrade.style.visibility = "visible";
 }
