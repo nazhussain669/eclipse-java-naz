@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grade Level Info</title>
+    <link rel="stylesheet" href="grade.css">
+    <script src="firstlevelgrade.js" defer></script>
+</head>
+<body>
+    <h1>Grade Level Information</h1>
+    <br><br>
+
+    <label for="drdchooselevel">Select your grade level:</label>
+    <select id="drdchooselevel">
+        <option value="" selected disabled>-- Choose a grade --</option>
+        <option value="9th">9th Grade</option>
+        <option value="10th">10th Grade</option>
+        <option value="11th">11th Grade</option>
+        <option value="12th">12th Grade</option>
+    </select>
+
+    <!-- This container will show the selected grade’s message -->
+    <div id="messagedisplay">
+        <div id="9th" class="gradeMessage">Welcome to 9th Grade!</div>
+        <div id="10th" class="gradeMessage">Welcome to 10th Grade!</div>
+        <div id="11th" class="gradeMessage">Welcome to 11th Grade!</div>
+        <div id="12th" class="gradeMessage">Welcome to 12th Grade!</div>
+    </div>
+</body>
+</html>
