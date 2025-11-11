@@ -2,28 +2,30 @@ window.addEventListener("load", addListener);
 
 function addListener() 
 {
-    document.getElementById("drdchooselevel").addEventListener("change", ChangeGrade);
-	HideMsg();
+    document.getElementById("drdchooselevel").addEventListener("change", changeGrade);
+    hideLabel(); // Hide the message label when the page first loads
 }
 
-function HideMsg() 
+function hideLabel() // This function hides the label and clears its text
 {
-	// Hide all messages when page loads
-	Div9 = document.getElementById("9th").style.visibility = "hidden";
-	Div10 = document.getElementById("10th").style.visibility = "hidden";
-	Div11 = document.getElementById("11th").style.visibility = "hidden";
-	Div12 = document.getElementById("12th").style.visibility = "hidden";
+    const labelBox = document.getElementById("gradelabel"); // Get the label element
+    labelBox.style.visibility = "hidden"; // Make it invisible
+    labelBox.textContent = ""; // Clear any existing message
 }
 
-function ChangeGrade() 
+function changeGrade() 
 {
-    // Get selected grade (e.g., "9th", "10th", etc.)
-    let selectedGrade = document.getElementById("drdchooselevel").value;
+    const selectedGrade = document.getElementById("drdchooselevel").value; // Get the selected option's value
+    const labelBox = document.getElementById("gradelabel"); // Get the label box where the message will show
 
-    // Hide all first
-    HideMsg();
-
-    // Show the selected one
-    whichgrade = document.getElementById(selectedGrade);
-    whichgrade.style.visibility = "visible";
+    if (selectedGrade) 
+	{
+        const message = document.getElementById(selectedGrade).textContent; // Find the hidden <div> that matches the selected grade and get its text
+        labelBox.textContent = message; // Display that message inside the label
+        labelBox.style.visibility = "visible"; // Make the label visible
+    } 
+	else 
+	{
+        hideLabel(); // Hide and clear the label again
+    }
 }

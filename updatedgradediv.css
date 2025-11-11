@@ -13,6 +13,13 @@ h1
     margin-bottom: 30px;
 }
 
+label
+{
+	display: inline-block;
+	color: #000000;
+	font-size: 20px;
+}
+
 select 
 {
     padding: 15px;
