@@ -2,8 +2,15 @@ window.addEventListener("load", addListener);
 
 function addListener() 
 {
-    document.getElementById("drdchooselevel").addEventListener("change", changeGrade);
+    document.getElementById("drdchooselevel").addEventListener("click", changeGrade);
+	hideMsgs(); //Hide the msgs when the page loads
     hideLabel(); // Hide the message label when the page first loads
+}
+
+function hideMsgs()
+{
+	const hiddenmsg = document.getElementById("hiddenmessages");
+	hiddenmsg.style.visibility = "hidden";
 }
 
 function hideLabel() // This function hides the label and clears its text
