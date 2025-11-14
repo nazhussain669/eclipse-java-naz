@@ -24,16 +24,16 @@ function AddInformation()
 
 function StoreInformation()
 {
-	let datatable = document.getElementById("tbldataTable");
+	let datatable = document.getElementById("tbldatatable");
 	
 	datatable.innerHTML = `
-		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Age</th>
-			<th>City</th>
-			<th>Email</th>
-		</tr>`;
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Age</th>
+				<th>City</th>
+				<th>Email</th>
+			</tr>`;
 		
 	for (let i=0; i<dataArray.length; i++)
 	{
