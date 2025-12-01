@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Info</title>
+    <title>Student Info Table</title>
     <link rel="stylesheet" href="studentinfo.css">
     <script src="info.js"></script>
 </head>
@@ -9,27 +9,41 @@
 
     <h2>Enter Your Information</h2>
 
-    <label>Name:</label>
-    <input type="text" id="txtname" placeholder="Enter name"><br><br>
+    <label>First Name:</label>
+    <input type="text" id="txtfname"><br><br>
+    
+    <label>Last Name:</label>
+    <input type="text" id="txtlname"><br><br>
 
     <label>Age:</label>
-    <input type="number" id="txtage" placeholder="Enter age"><br><br>
+    <input type="number" min="1" id="txtage"><br><br>
 
     <label>Grade:</label>
-    <input type="text" id="txtgrade" placeholder="Enter grade"><br><br>
+    <input type="text" id="txtgrade"><br><br>
 
     <button id="btnEnter">Enter</button>
+    <button id="btnAdd">Add</button>
     <button id="btnClear">Clear</button>
 
     <br><br>
 
-    <!-- Hidden output box -->
-    <div id="infobox">
-        <h3>Your Information:</h3>
-        <div id="displayname"></div>
-        <div id="displayage"></div>
-        <div id="displaygrade"></div>
-    </div>
+    <!-- Table becomes hidden on load -->
+    <div id="tableDiv">
+    <table id="tblstudentinfo">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+
+        <tbody id="tblbody">
+            <!-- student info will be stored here -->
+        </tbody>
+    </table>
+	</div>
 
 </body>
 </html>
