@@ -7,15 +7,27 @@ function addListener()
 	
 function UseLocal()
 {
-	localStorage.clear();
+	localStorage.clear(); //clears storage
 	
-	localStorage.firstname = document.getElementById("firstname").value;
-    localStorage.lastname = document.getElementById("lastname").value;
-    localStorage.id = document.getElementById("id").value;
-    localStorage.school = document.getElementById("school").value;
-    localStorage.counselor = document.getElementById("counselor").value;
-    localStorage.grade = document.getElementById("grade").value;
-
+	// collects value of inputs
+	fname = document.getElementById("txtfirstname").value;
+	localStorage.setItem("firstname",fname);
+	
+	lname = document.getElementById("txtlastname").value;
+	localStorage.setItem("lastname",lname);
+	
+	ident = document.getElementById("txtid").value;
+	localStorage.setItem("id",ident);
+	
+	schooln = document.getElementById("txtschool").value;
+	localStorage.setItem("school",schooln);
+	
+	couns = document.getElementById("txtcounselor").value;
+	localStorage.setItem("counselor",couns);
+	
+	grdlvl = document.getElementById("txtgrade").value;
+	localStorage.setItem("grade",grdlvl);
+	
     // Automatically open 2nd html
     window.location = "local2.html";
 }
