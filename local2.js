@@ -1,26 +1,35 @@
-window.addEventListener("load", addRow);
+window.addEventListener("load", addRows);
 
-function addRow()
+function addRows()
 {
-    const tblBody = document.getElementById('tblstudentinfo'); // collects the id of the table
+    const tbl = document.getElementById("tblstudentinfo");
 
-    const row = tblBody.insertRow();
+	// Retrieve the stored data from localStorage and convert it back to an array
+    let data = JSON.parse(localStorage.getItem("studentinfo")); 
+	//turns a JSON string back into a javascript object.
 
-    const fnCell = row.insertCell();
-    fnCell.textContent = localStorage.getItem("firstname"); //adds the user inputs in the respective rows
+    // loop through all stored entries
+    for (let i = 0; i < data.length; i++)
+    {
+        const row = tbl.insertRow(); // Create a new row at the end of the table
 
-    const lnCell = row.insertCell();
-    lnCell.textContent = localStorage.getItem("lastname");
+		// Create and fill each cell in the row with student info
+        const fnCell = row.insertCell();
+        fnCell.textContent = data[i].firstname;
 
-    const idCell = row.insertCell();
-    idCell.textContent = localStorage.getItem("id");
+        const lnCell = row.insertCell();
+        lnCell.textContent = data[i].lastname;
 
-    const schoolCell = row.insertCell();
-    schoolCell.textContent = localStorage.getItem("school");
+        const idCell = row.insertCell();
+        idCell.textContent = data[i].id;
 
-    const counCell = row.insertCell();
-    counCell.textContent = localStorage.getItem("counselor");
+        const schoolCell = row.insertCell();
+        schoolCell.textContent = data[i].school;
 
-    const gradeCell = row.insertCell();
-    gradeCell.textContent = localStorage.getItem("grade");
+        const counCell = row.insertCell();
+        counCell.textContent = data[i].counselor;
+
+        const gradeCell = row.insertCell();
+        gradeCell.textContent = data[i].grade;
+    }
 }

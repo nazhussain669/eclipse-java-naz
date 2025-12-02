@@ -1,33 +1,44 @@
-window.addEventListener("load", addListener);
+window.addEventListener("load", start);
 
-function addListener()
+let storedData = []; // array to store all entries
+
+function start()
 {
-    document.getElementById("btnsubmit").addEventListener("click", UseLocal);
+    document.getElementById("btnadd").addEventListener("click", addInfo);
+    document.getElementById("btnsubmit").addEventListener("click", Submit);
 }
-	
-function UseLocal()
+
+function addInfo()
 {
-	localStorage.clear(); //clears storage
-	
-	// collects value of inputs
-	fname = document.getElementById("txtfirstname").value;
-	localStorage.setItem("firstname",fname);
-	
-	lname = document.getElementById("txtlastname").value;
-	localStorage.setItem("lastname",lname);
-	
-	ident = document.getElementById("txtid").value;
-	localStorage.setItem("id",ident);
-	
-	schooln = document.getElementById("txtschool").value;
-	localStorage.setItem("school",schooln);
-	
-	couns = document.getElementById("txtcounselor").value;
-	localStorage.setItem("counselor",couns);
-	
-	grdlvl = document.getElementById("txtgrade").value;
-	localStorage.setItem("grade",grdlvl);
-	
-    // Automatically open 2nd html
-    window.location = "local2.html";
+    // creates an object for one student
+    let info = 
+	{
+        firstname: document.getElementById("txtfirstname").value,
+        lastname: document.getElementById("txtlastname").value,
+        id: document.getElementById("txtid").value,
+        school: document.getElementById("txtschool").value,
+        counselor: document.getElementById("txtcounselor").value,
+        grade: document.getElementById("txtgrade").value
+    };
+
+    // adds to array
+    storedData.push(info);
+
+    // clears inputs
+    document.getElementById("txtfirstname").value = "";
+    document.getElementById("txtlastname").value = "";
+    document.getElementById("txtid").value = "";
+    document.getElementById("txtschool").value = "";
+    document.getElementById("txtcounselor").value = "";
+    document.getElementById("txtgrade").value = "";
+}
+
+function Submit()
+{
+    // saves entire array
+    localStorage.setItem("studentinfo", JSON.stringify(storedData));
+	//turns a javascript object into a string. To send or store data into localStorage, it needs to be a string not as an object.
+
+    // goes to table page
+    window.location.href = "local2.html";
 }
