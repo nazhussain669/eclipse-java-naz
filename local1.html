@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Storing Info</title>
+    <title>Enter Info</title>
     <link rel="stylesheet" href="storage1.css">
     <script src="local1.js"></script>
 </head>
 <body>
-    <h1>Enter Information</h1>
-    
-    <label id="lblfirstname">First Name</label>
-    <input type="text" id="txtfirstname" autofocus required></input><br><br>
-    
-    <label id="lbllastname">Last Name</label>
-    <input type="text" id="txtlastname"></input><br><br>
-    
-    <label id="lblid">ID</label>
-    <input type="text" id="txtid"></input><br><br>
-    
-    <label id="lblschool">School Name</label>
-    <input type="text" id="txtschool"></input><br><br>
-    
-    <label id="lblcounselor">Guidance Counselor</label>
-    <input type="text" id="txtcounselor"></input><br><br>
-    
-    <label id="lblgrade">Grade Level</label>
-    <input type="text" id="txtgrade"></input><br><br>
 
-    <button type="submit" id="btnadd">ADD</button>
-    <button type="submit" id="btnsubmit">ENTER</button>
+    <h1>Enter Information</h1>
+    <h2>To add another entry, click ADD</h2>
+    <h2>To enter all entries into table click ENTER (make sure to hit ADD before clicking ENTER)</h2>
+    <h2>To clear local storage with all data, click CLEAR</h2>
+
+    <label>First Name</label>
+    <input type="text" id="txtfirstname" autofocus required><br><br>
+
+    <label>Last Name</label>
+    <input type="text" id="txtlastname"><br><br>
+
+    <label>ID</label>
+    <input type="text" id="txtid"><br><br>
+
+    <label>School</label>
+    <input type="text" id="txtschool"><br><br>
+
+    <label>Counselor</label>
+    <input type="text" id="txtcounselor"><br><br>
+
+    <label>Grade</label>
+    <input type="text" id="txtgrade"><br><br>
+
+    <button id="btnadd">ADD</button>
+    <button id="btnenter">ENTER</button>
+    <button id="btnclear">CLEAR</button>
 
 </body>
 </html>

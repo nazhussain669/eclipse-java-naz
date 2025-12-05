@@ -1,35 +1,47 @@
-window.addEventListener("load", addRows);
+window.addEventListener("load", fillTable);
 
-function addRows()
+function fillTable()
 {
-    const tbl = document.getElementById("tblstudentinfo");
+    const tbody = document.getElementById("tblbodyinfo");
 
-	// Retrieve the stored data from localStorage and convert it back to an array
-    let data = JSON.parse(localStorage.getItem("studentinfo")); 
-	//turns a JSON string back into a javascript object.
+    let count = localStorage.getItem("count");
 
-    // loop through all stored entries
-    for (let i = 0; i < data.length; i++)
+    if (count == null) //no value, signals that a variable exists but is currently empty and can hold a value
+        return;
+
+    count = parseInt(count);
+
+    for (let i = 0; i < count; i++)
     {
-        const row = tbl.insertRow(); // Create a new row at the end of the table
+        // create row
+        const row = document.createElement("tr");
 
-		// Create and fill each cell in the row with student info
-        const fnCell = row.insertCell();
-        fnCell.textContent = data[i].firstname;
+        // create each cell
+        const fn = document.createElement("td");
+        fn.textContent = localStorage.getItem("firstname" + i);
+        row.appendChild(fn);
 
-        const lnCell = row.insertCell();
-        lnCell.textContent = data[i].lastname;
+        const ln = document.createElement("td");
+        ln.textContent = localStorage.getItem("lastname" + i);
+        row.appendChild(ln);
 
-        const idCell = row.insertCell();
-        idCell.textContent = data[i].id;
+        const id = document.createElement("td");
+        id.textContent = localStorage.getItem("id" + i);
+        row.appendChild(id);
 
-        const schoolCell = row.insertCell();
-        schoolCell.textContent = data[i].school;
+        const school = document.createElement("td");
+        school.textContent = localStorage.getItem("school" + i);
+        row.appendChild(school);
 
-        const counCell = row.insertCell();
-        counCell.textContent = data[i].counselor;
+        const coun = document.createElement("td");
+        coun.textContent = localStorage.getItem("counselor" + i);
+        row.appendChild(coun);
 
-        const gradeCell = row.insertCell();
-        gradeCell.textContent = data[i].grade;
+        const grade = document.createElement("td");
+        grade.textContent = localStorage.getItem("grade" + i);
+        row.appendChild(grade);
+
+        // add row to table
+        tbody.appendChild(row);
     }
 }

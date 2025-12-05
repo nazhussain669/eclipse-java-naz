@@ -1,30 +1,50 @@
 window.addEventListener("load", start);
 
-let storedData = []; // array to store all entries
-
 function start()
 {
     document.getElementById("btnadd").addEventListener("click", addInfo);
-    document.getElementById("btnsubmit").addEventListener("click", Submit);
+    document.getElementById("btnenter").addEventListener("click", Enter);
+	document.getElementById("btnclear").addEventListener("click", clearAll);
 }
 
 function addInfo()
 {
-    // creates an object for one student
-    let info = 
+	document.getElementById("txtfirstname").focus();
+	
+	let first = document.getElementById("txtfirstname").value;
+	let last = document.getElementById("txtlastname").value;
+	let ident = document.getElementById("txtid").value;
+	let sch = document.getElementById("txtschool").value;
+	let couns = document.getElementById("txtcounselor").value;
+	let grd = document.getElementById("txtgrade").value;
+	
+	if (first == "" || last == "" || ident == "" || sch == "" || couns == "" || grd == "")
 	{
-        firstname: document.getElementById("txtfirstname").value,
-        lastname: document.getElementById("txtlastname").value,
-        id: document.getElementById("txtid").value,
-        school: document.getElementById("txtschool").value,
-        counselor: document.getElementById("txtcounselor").value,
-        grade: document.getElementById("txtgrade").value
-    };
+		alert("Input all fields!");
+		return; // stop function
+	}
+	
+    // Get the count of how many rows already stored
+    let count = localStorage.getItem("count");
 
-    // adds to array
-    storedData.push(info);
+    if (count == null)
+        count = 0;
+    else
+        count = parseInt(count);
 
-    // clears inputs
+    // Store each value separately
+    localStorage.setItem("firstname" + count, first);
+    localStorage.setItem("lastname" + count, last);
+    localStorage.setItem("id" + count, ident);
+    localStorage.setItem("school" + count, sch);
+    localStorage.setItem("counselor" + count, couns);
+    localStorage.setItem("grade" + count, grd);
+
+    // update count
+    count++;
+    localStorage.setItem("count", count);
+
+    // clear inputs
     document.getElementById("txtfirstname").value = "";
     document.getElementById("txtlastname").value = "";
     document.getElementById("txtid").value = "";
@@ -33,12 +53,13 @@ function addInfo()
     document.getElementById("txtgrade").value = "";
 }
 
-function Submit()
+function Enter()
 {
-    // saves entire array
-    localStorage.setItem("studentinfo", JSON.stringify(storedData));
-	//turns a javascript object into a string. To send or store data into localStorage, it needs to be a string not as an object.
-
-    // goes to table page
     window.location.href = "local2.html";
+}
+
+function clearAll()
+{
+    localStorage.clear(); // remove everything
+    alert("All data has been cleared!");
 }
