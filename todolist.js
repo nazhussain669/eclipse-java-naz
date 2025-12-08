@@ -2,19 +2,22 @@ window.addEventListener("load", addListeners);
 
 let tasks = []; // store all tasks
 
-function addListeners() {
+function addListeners() 
+{
     document.getElementById("btnAdd").addEventListener("click", addTask);
     document.getElementById("btnComplete").addEventListener("click", completeTask);
     document.getElementById("btnDelete").addEventListener("click", deleteTask);
 }
 
 // Add task to the list
-function addTask() {
+function addTask() 
+{
     let taskInput = document.getElementById("txtTask").value;
-    if (taskInput == "") {
+    if (taskInput == "") 
+		{
         alert("Please enter a task.");
         return;
-    }
+    	}
 
     tasks.push(taskInput);
     updateTaskList();
@@ -23,7 +26,8 @@ function addTask() {
 }
 
 // Update the dropdown menu
-function updateTaskList() {
+function updateTaskList() 
+{
     let select = document.getElementById("taskList");
     select.innerHTML = ""; // clear previous options
 
@@ -36,24 +40,28 @@ function updateTaskList() {
 }
 
 // Complete the selected task
-function completeTask() {
+function completeTask() 
+{
     let select = document.getElementById("taskList");
-    if (select.selectedIndex == -1) {
+    if (select.selectedIndex == -1) 
+		{
         alert("Please select a task to complete.");
         return;
-    }
+    	}
 
     let task = tasks[select.selectedIndex];
     alert(`Task completed: ${task}`);
 }
 
 // Delete the selected task
-function deleteTask() {
+function deleteTask() 
+{
     let select = document.getElementById("taskList");
-    if (select.selectedIndex == -1) {
+    if (select.selectedIndex == -1) 
+		{
         alert("Please select a task to delete.");
         return;
-    }
+    	}
 
     tasks.splice(select.selectedIndex, 1); // remove from array
     updateTaskList();
