@@ -31,12 +31,13 @@ function updateTaskList()
     let select = document.getElementById("taskList");
     select.innerHTML = ""; // clear previous options
 
-    for (let i = 0; i < tasks.length; i++) {
+    for (let i = 0; i < tasks.length; i++) 
+		{
         let option = document.createElement("option");
         option.value = i; // use index as value
         option.textContent = tasks[i];
         select.appendChild(option);
-    }
+    	}
 }
 
 // Complete the selected task
