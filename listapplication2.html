@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To do List Application</title>
+    <link rel="stylesheet" href="listapplication2.css">
+    <script src="listapplication2.js"></script>
+</head>
+<body>
+
+    <h2>Enter Tasks For This Week</h2>
+	
+	<label>Sunday:</label>
+    <input type="text" id="txtsunday"><br><br>
+
+    <label>Monday:</label>
+    <input type="text" id="txtmonday"><br><br>
+    
+    <label>Tuesday:</label>
+    <input type="text" id="txttuesday"><br><br>
+    
+    <label>Wednesday:</label>
+    <input type="text" id="txtwednesday"><br><br>
+    
+    <label>Thursday:</label>
+    <input type="text" id="txtthursday"><br><br>
+    
+    <label>Friday:</label>
+    <input type="text" id="txtfriday"><br><br>
+    
+    <label>Saturday:</label>
+    <input type="text" id="txtsaturday"><br><br>
+
+    <button id="btnEnter">Enter</button>
+    <button id="btnAdd">Add</button>
+    <button id="btnClear">Clear</button>
+
+    <br><br>
+
+    <!-- Table becomes hidden on load -->
+    <div id="tableDiv">
+    <table id="tblstudentinfo">
+        <thead>
+            <tr>
+            	<th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+
+        <tbody id="tblbody">
+            <!-- tasks will be stored here -->
+        </tbody>
+    </table>
+	</div>
+
+</body>
+</html>
