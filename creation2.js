@@ -1,10 +1,8 @@
-window.addEventListener("load",addListener);
-
-tray=[];
+window.addEventListener("load", addListener);
 
 function addListener()
 {
-	document.getElementById("btnsubmit").addEventListener("click",CreateFile);
+	document.getElementById("btnsubmit").addEventListener("click", CreateFile);
 }
 
 function CreateFile()
@@ -15,28 +13,35 @@ function CreateFile()
 	gpa = document.getElementById("txtgpa").value.trim();
 	grade = document.getElementById("txtgrade").value.trim();
 	
-	tray.push
-		({fname,lname,midname,gpa,grade});
+	midname = document.getElementById("txtmidname").value.trim();
+
+	// If no middle initial was entered, display "None"
+	if (midname.length == 0)
+	{
+		midname = "None";
+	}
 	
-	filename = "Student Information";
+	// Text content for the file
+	content =
+		"First Name: " + fname + "\n" +
+		"Last Name: " + lname + "\n" +
+		"Middle Initial: " + midname + "\n" +
+		"GPA: " + gpa + "\n" +
+		"Grade Level: " + grade;
 	
-	filename = filename + ".txt";
+	filename = "Student Information.txt";
 	
-	blob = new Blob([tray],{type: 'text/plain'});
+	blob = new Blob([content], { type: "text/plain" });
 	
 	url = URL.createObjectURL(blob);
 	
-	a = document.createElement('a');
-	
+	a = document.createElement("a");
 	a.href = url;
-	
 	a.download = filename;
 	
 	document.body.appendChild(a);
-	
 	a.click();
-	
 	document.body.remove(a);
 	
-	URL.revokeObjectURL(url);	
+	URL.revokeObjectURL(url);
 }
