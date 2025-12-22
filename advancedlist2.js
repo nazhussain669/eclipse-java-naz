@@ -45,31 +45,39 @@ function updateDropdown() {
 }
 
 // Update table
-function updateTable() {
+function updateTable()
+{
     // Show table
     document.getElementById("tableDiv").style.visibility = "visible";
 
     // Clear all table cells
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    for (let i = 0; i < days.length; i++) {
+    for (let i = 0; i < days.length; i++) 
+	{
         document.getElementById("td" + days[i]).textContent = "";
     }
 
     // Add tasks to correct day
-    for (let i = 0; i < tasks.length; i++) {
-        let dayCell = document.getElementById("td" + tasks[i].day);
-        if (dayCell.textContent == "") {
-            dayCell.textContent = tasks[i].name;
-        } else {
-            dayCell.textContent += ", " + tasks[i].name;
-        }
+    for (let i = 0; i < tasks.length; i++) 
+	{
+       let dayCell = document.getElementById("td" + tasks[i].day);
+       if (dayCell.textContent == "") 
+		{
+       		dayCell.textContent = tasks[i].name;
+    	} 
+		else 
+		{
+       		dayCell.textContent += ", " + tasks[i].name;
+    	}
     }
 }
 
 // Complete selected task
-function completeTask() {
+function completeTask() 
+{
     let dropdown = document.getElementById("taskDropdown");
-    if (dropdown.selectedIndex == -1) {
+    if (dropdown.selectedIndex == -1)
+	{
         alert("Please select a task to complete.");
         return;
     }
@@ -79,9 +87,11 @@ function completeTask() {
 }
 
 // Delete selected task
-function deleteTask() {
+function deleteTask()
+{
     let dropdown = document.getElementById("taskDropdown");
-    if (dropdown.selectedIndex == -1) {
+    if (dropdown.selectedIndex == -1)
+	{
         alert("Please select a task to delete.");
         return;
     }
@@ -90,4 +100,5 @@ function deleteTask() {
     tasks.splice(idx, 1); // remove from array
     updateDropdown();
     updateTable();
+	alert("Task deleted: " + tasks[idx].name);
 }
