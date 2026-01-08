@@ -47,3 +47,25 @@ th,td
 	text-align:center;
 	background-color:#eee;
 }
+
+/* Center the table on the page */
+#tableDiv 
+{
+    display: flex;
+    justify-content: center;
+}
+
+/* Container for images at the bottom */
+img {
+    display: inline-block;
+}
+
+/* First image on the left */
+img:first-of-type {
+    float: left;
+}
+
+/* Second image on the right */
+img:last-of-type {
+    float: right;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To do List Application</title>
+    <link rel="stylesheet" href="listapplication2.css">
+    <script src="advancedlist2.js"></script>
+    <script src="advancedlist3.js"></script>
+</head>
+<body>
+
+    <h2>Enter Tasks For This Week</h2>
+
+    <label>Task:</label>
+    <input type="text" id="txtTask"><br><br>
+
+    <label>Day:</label>
+    <select id="daySelect">
+        <option value="Sunday">Sunday</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+    </select><br><br>
+
+    <button id="btnAdd">Add</button>
+    <button id="btnComplete">Complete</button>
+    <button id="btnDelete">Delete</button>
+    <button id="btnCreateFile">Create File</button>
+
+    <br><br>
+
+    <label>Tasks List:</label>
+    <select id="taskDropdown" size="5"></select>
+
+    <br><br>
+
+    <div id="tableDiv">
+        <table id="tblweek">
+            <thead>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> <!-- Each cell represents a day -->
+                    <td id="tdSunday"></td>
+                    <td id="tdMonday"></td>
+                    <td id="tdTuesday"></td>
+                    <td id="tdWednesday"></td>
+                    <td id="tdThursday"></td>
+                    <td id="tdFriday"></td>
+                    <td id="tdSaturday"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
