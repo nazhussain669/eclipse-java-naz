@@ -1,3 +1,4 @@
+
 window.addEventListener("load", checkInput);
 
 function checkInput()
@@ -11,7 +12,7 @@ function checkInput()
     let total = parseFloat(totalInput.value);
     let tip = parseFloat(tipInput.value);
 
-    if (!isNaN(total) && total > 0 && !isNaN(tip) && tip >= 0)
+    if (!isNaN(total) && total > 0 && !isNaN(tip) && tip >= 0) // !isNaN means total IS a valid number
     {
         calculateBtn.disabled = false;
     }

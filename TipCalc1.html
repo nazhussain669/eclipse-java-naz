@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +12,23 @@
     <h1>Tip Calculator</h1>
 
     <!-- Total price input -->
-    <label id="txttotal">Enter Total Price</label>
+    <label>Enter Total Price</label>
     <input type="number" id="txttotal" placeholder="Total price"><br><br>
 
     <!-- Tip percentage input -->
-    <label id="txttip">Enter Tip Percentage</label>
+    <label>Enter Tip Percentage</label>
     <input type="number" id="txttip" placeholder="Tip %"><br><br>
+    
+    <!-- Filename input -->
+    <label>Enter File Name</label>
+	<input type="text" id="txtfilename" placeholder="File name">
 
-    <!-- Calculate button -->
-    <button type="submit" id="btncalculate">CALCULATE</button>
-    <button type="submit" id="btncreatefile">CREATE FILE</button>
+    <button type="submit" id="btncalculate">CALCULATE</button> 
+    <button type="submit" id="btncreatefile">CREATE FILE</button> 
+    <button type="submit" id="btnnew">NEW</button><br><br>
+    <button type="submit" id="btnmainmenu">MAIN MENU</button>
 
-    <!-- Result display -->
+    <!-- Paragraph element used to display the calculated tip and total -->
     <p id="result"></p>
     
     <img src="tipimg.jpg" alt="Tip Img" width="300" height="300">

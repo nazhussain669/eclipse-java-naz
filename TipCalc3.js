@@ -1,9 +1,12 @@
+
 window.addEventListener("load", addListeners);
 
 function addListeners()
 {
     document.getElementById("btncalculate").addEventListener("click", calculateTip);
     document.getElementById("btncreatefile").addEventListener("click", createFile);
+	document.getElementById("btnnew").addEventListener("click", newCalculation);
+	document.getElementById("btnmainmenu").addEventListener("click", goToMainMenu);
 }
 
 let lastResult = ""; // store last calculation for file creation
@@ -18,7 +21,7 @@ function calculateTip()
     let total = parseFloat(totalInput.value);
     let tipPercent = parseFloat(tipInput.value);
 
-    if (isNaN(total) || total <= 0)
+    if (isNaN(total) || total <= 0) // isNaN checks if a value is NOT a number
     {
         alert("Please enter a valid total price.");
         totalInput.focus();
@@ -36,8 +39,7 @@ function calculateTip()
     let finalTotal = total + tipAmount;
 
     // Display result
-    result.textContent = "Tip: $" + tipAmount.toFixed(2) +
-                         " | Total with Tip: $" + finalTotal.toFixed(2);
+    result.textContent = "Tip: $" + tipAmount.toFixed(2) + " | Total with Tip: $" + finalTotal.toFixed(2); //fixed to two decimal places
 
     // Store result for file creation
     lastResult = "Total Price: $" + total.toFixed(2) + "\n" +
@@ -49,6 +51,19 @@ function calculateTip()
     createBtn.disabled = false;
 }
 
+function newCalculation()
+{
+    document.getElementById("txttotal").value = "";
+    document.getElementById("txttip").value = "";
+    document.getElementById("txtfilename").value = "";
+    document.getElementById("result").textContent = "";
+
+    document.getElementById("btncalculate").disabled = true;
+    document.getElementById("btncreatefile").disabled = true;
+
+    lastResult = ""; // clear stored result
+}
+
 function createFile()
 {
     if (lastResult.length == 0)
@@ -57,7 +72,18 @@ function createFile()
         return;
     }
 
-    let filename = "Tip_Calculation.txt";
+	let filenameInput = document.getElementById("txtfilename");
+	let filename = filenameInput.value;
+	
+	if (filename.length == 0)
+	{
+	    alert("Please enter a file name.");
+	    filenameInput.focus();
+	    return;
+	}
+	
+	filename = filename + ".txt";
+	
     let blob = new Blob([lastResult], { type: "text/plain" });
     let url = URL.createObjectURL(blob);
 
@@ -70,4 +96,10 @@ function createFile()
     document.body.removeChild(a);
 
     URL.revokeObjectURL(url);
+}
+
+function goToMainMenu()
+{
+    // goes back to the mainscreen
+    window.location.href = "login1.html";
 }
