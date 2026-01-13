@@ -62,6 +62,9 @@ function newCalculation()
     document.getElementById("btncreatefile").disabled = true;
 
     lastResult = ""; // clear stored result
+
+	// Put the cursor back in the total price input
+    document.getElementById("txttotal").focus();
 }
 
 function createFile()
@@ -103,3 +106,4 @@ function goToMainMenu()
     // goes back to the mainscreen
     window.location.href = "login1.html";
 }
+
