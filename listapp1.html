@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>To do List Application</title>
+    <title>To-Do List Application</title>
     <link rel="stylesheet" href="listapp4.css">
     <script src="listapp2.js"></script>
     <script src="listapp3.js"></script>
@@ -10,14 +9,11 @@
 <body>
 
     <h2>Enter Tasks For This Week</h2>
-    <h3>Select a day from the "Day" dropdown to add. </h3>
-    <h3>Select a task from the "Tasks List" dropdown to mark as completed or delete.</h3>
+    <h3>Select a day from the dropdown to add a task.</h3>
+    <h3>Type the task number in the box to complete or delete a task.</h3>
 
     <label>Task:</label>
-    <input type="text" id="txtTask"><br><br>
-    
-    <label>Enter File Name</label>
-	<input type="text" id="txtFileName" placeholder="File name">
+    <input type="text" id="txtTask">
 
     <label>Day:</label>
     <select id="daySelect">
@@ -28,18 +24,25 @@
         <option value="Thursday">Thursday</option>
         <option value="Friday">Friday</option>
         <option value="Saturday">Saturday</option>
-    </select><br><br>
+    </select>
 
-    <button id="btnAdd">Add</button>
+    <button id="btnAdd">Add</button><br><br>
+
+    <!-- Display all tasks-->
+    <label>Tasks List:</label><br>
+    
+    <textarea id="taskList" readonly></textarea><br><br> <!-- readonly cannot be edited -->
+    
+    <label>Enter task number to complete or delete:</label>
+    <input type="text" id="taskNumber">
+    
     <button id="btnComplete">Complete</button>
-    <button id="btnDelete">Delete</button>
+    <button id="btnDelete">Delete</button><br><br>
+    
+    <input type="text" id="txtFileName" placeholder="Enter file name">
     <button id="btnCreateFile">Create File</button>
-    <button type="submit" id="btnmainmenu">MAIN MENU</button>
 
-    <br><br>
-
-    <label>Tasks List:</label>
-    <select id="taskDropdown"></select>
+    <button id="btnMainMenu">Main Menu</button>
 
     <br><br>
 
@@ -57,7 +60,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr> <!-- Each cell represents a day -->
+                <tr>
                     <td id="tdSunday"></td>
                     <td id="tdMonday"></td>
                     <td id="tdTuesday"></td>
@@ -69,11 +72,11 @@
             </tbody>
         </table>
     </div>
-    
+
     <br><br>
-    
+
     <img src="stickynote.jpg" alt="Sticky Note" width="300" height="300">
-	<img src="days.jpg" alt="Days of the Week" width="300" height="300">
+    <img src="days.jpg" alt="Days of the Week" width="300" height="300">
 
 </body>
 </html>

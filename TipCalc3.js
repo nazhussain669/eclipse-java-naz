@@ -1,4 +1,3 @@
-
 window.addEventListener("load", addListeners);
 
 function addListeners()
@@ -104,6 +103,6 @@ function createFile()
 function goToMainMenu()
 {
     // goes back to the mainscreen
-    window.location.href = "login1.html";
+    window.location.href = "mainscreen1.html";
 }
 
