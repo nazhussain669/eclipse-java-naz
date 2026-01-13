@@ -1,8 +1,10 @@
+
 window.addEventListener("load", addFileListener);
 
 function addFileListener()
 {
     document.getElementById("btnCreateFile").addEventListener("click", createFile);
+	document.getElementById("btnmainmenu").addEventListener("click", goToMainMenu);
 }
 
 function createFile()
@@ -12,6 +14,15 @@ function createFile()
         alert("No tasks to save.");
         return;
     }
+	
+	let fileName = document.getElementById("txtFileName").value.trim(); // Get user file name
+
+	if (fileName == "") // Stop if filename is empty
+	{
+	    alert("Please enter a file name before creating the file.");
+	    document.getElementById("txtFileName").focus();
+	    return;
+	}
 
     let content = "Weekly To-Do List\n\n"; // Text content for the file
 
@@ -26,11 +37,17 @@ function createFile()
 
     let a = document.createElement("a");
     a.href = url;
-    a.download = "Weekly_Tasks.txt";
+    a.download = fileName + ".txt";
 
     document.body.appendChild(a); // Trigger the download
     a.click();
     document.body.removeChild(a);
 
     URL.revokeObjectURL(url);
+}
+
+function goToMainMenu()
+{
+    // goes back to the mainscreen
+    window.location.href = "mainscreen1.html";
 }

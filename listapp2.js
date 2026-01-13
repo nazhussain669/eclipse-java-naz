@@ -1,3 +1,4 @@
+
 window.addEventListener("load", addListeners);
 
 let tasks = []; // Array to store all tasks as objects { name, day }
@@ -41,10 +42,10 @@ function updateDropdown()
 
     for (let i = 0; i < tasks.length; i++) // Loop through tasks array 
     {
-        let option = document.createElement("option");
-        option.value = i;
-        option.textContent = tasks[i].name + " (" + tasks[i].day + ")";
-        dropdown.appendChild(option);
+        let option = document.createElement("option"); //Make a new option in the dropdown for the task
+        option.value = i; //Sets the value of the option to the index i of the task in the tasks array
+        option.textContent = tasks[i].name + " (" + tasks[i].day + ")"; //Show the task name and day in the dropdown so the user knows what it is
+        dropdown.appendChild(option); //Add the task to the dropdown so the user can select it
     }
 }
 
@@ -59,20 +60,20 @@ function updateTable()
 	// Clear all table cells
     for (let i = 0; i < days.length; i++)
     {
-        document.getElementById("td" + days[i]).textContent = "";
+        document.getElementById("td" + days[i]).textContent = ""; //If days[i] is "Monday", it gets the element with id="tdMonday"
     }
 
 	// Place tasks into correct day cell
     for (let i = 0; i < tasks.length; i++)
     {
-        let cell = document.getElementById("td" + tasks[i].day);
-        if (cell.textContent == "")
+        let cell = document.getElementById("td" + tasks[i].day); //Gets the day assigned to this task & finds the table cell for that day
+        if (cell.textContent == "") //If nothing is in the cell yet, input the task name there
         {
             cell.textContent = tasks[i].name;
         }
         else
         {
-            cell.textContent += ", " + tasks[i].name;
+            cell.textContent += ", " + tasks[i].name; //Add the new task after a comma, so multiple tasks show in the same cell
         }
     }
 }
@@ -80,30 +81,31 @@ function updateTable()
 // Complete task
 function completeTask()
 {
+	//dropdown.selectedIndex gives the position of the selected option in the dropdown.
     let dropdown = document.getElementById("taskDropdown");
-    if (dropdown.selectedIndex == -1) // Check if a task is selected
+    if (dropdown.selectedIndex == -1) // If the user hasn’t picked a task, tell them to pick one
     {
         alert("Please select a task to complete.");
         return;
     }
 
-    alert("Task completed: " + tasks[dropdown.selectedIndex].name);
+    alert("Task completed: " + tasks[dropdown.selectedIndex].name); //Tell the user which task they completed
 }
 
 // Delete task
 function deleteTask()
 {
     let dropdown = document.getElementById("taskDropdown");
-    if (dropdown.selectedIndex == -1)
+    if (dropdown.selectedIndex == -1) //-1 is a special value that means nothing is selected
     {
         alert("Please select a task to delete.");
         return;
     }
 
-    let idx = dropdown.selectedIndex;
+    let idx = dropdown.selectedIndex; //Store the selected index in idx
     let deleted = tasks[idx].name;
 
-    tasks.splice(idx, 1); // Remove task from array
+    tasks.splice(idx, 1); // splice(idx, 1) removes 1 item at position idx from the tasks array
     updateDropdown();
     updateTable();
 
